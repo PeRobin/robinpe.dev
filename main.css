@@ -6,6 +6,12 @@
     --background-gradient: radial-gradient(circle at center, #c61aff, #4e0066);
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 body {
     font-family: var(--font-family);
     color: var(--font-color);
