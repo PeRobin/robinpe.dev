@@ -39,6 +39,7 @@ body {
 }
 
 .emoji {
+  animation: pulse 2s infinite;
   font-size: 2rem;
   background: none;
   border: none;
@@ -65,4 +66,9 @@ body {
   position: absolute;
   font-size: 1.5rem;
   transform: translateX(-50%);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }
