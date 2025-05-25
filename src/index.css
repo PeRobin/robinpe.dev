@@ -1,0 +1,66 @@
+:root {
+  --font-family: 'OblivionFont', sans-serif;
+  --font-color: #e8e6e3;
+  --bacground-color-start: #c61aff;
+  --bacground-color-stop: #4e0066;
+  --background-gradient: radial-gradient(circle at center, #c61aff, #4e0066);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+} */
+
+/* body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+  font-family: var(--font-family);
+  color: var(--font-color);
+  background-image: var(--background-gradient);
+} */
+
+main {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+} 
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+  height: 100%;
+  font-family: var(--font-family);
+  color: var(--font-color);
+  background: var(--background-gradient);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.title {
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+.emoji {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.game {
+  font-size: 1.5rem;
+}
