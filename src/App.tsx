@@ -1,5 +1,6 @@
 import { createSignal } from "solid-js";
 import "./index.css";
+import Player from "./Player";
 
 export default function App() {
   const [showGame, setShowGame] = createSignal(false);
@@ -30,6 +31,7 @@ function Game() {
   return (
     <div class="game">
       <p>👾 Space Invaders kommer her!</p>
+      <Player/>
     </div>
   );
 }
