@@ -12,7 +12,7 @@ export default function App() {
         <section>
           <h1>Robin Pedersen</h1>
           <button
-            aria-label="Activate game"
+            aria-label="Activate space invaders"
             class="emoji"
             onClick={() => setShowGame(true)}
           >
