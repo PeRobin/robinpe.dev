@@ -1,10 +1,22 @@
-import { createSignal, onCleanup } from "solid-js";
+import { createSignal, onMount, onCleanup } from "solid-js";
 import Bullet from "./components/Bullet";
 import "./index.css";
 import Player from "./Player";
 
 export default function App() {
   const [showGame, setShowGame] = createSignal(false);
+
+  onMount(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (!showGame() && e.key === " ") {
+        e.preventDefault();
+        setShowGame(true);
+      }
+    };
+
+    window.addEventListener("keydown", handleKey);
+    onCleanup(() => window.removeEventListener("keydown", handleKey));
+  });
 
   return (
     <main>
