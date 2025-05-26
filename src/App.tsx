@@ -1,5 +1,6 @@
-import { createSignal, onMount, onCleanup } from "solid-js";
+import { createSignal, onCleanup, onMount } from "solid-js";
 import Bullet from "./components/Bullet";
+import SocialLinks from "./components/SocialLinks";
 import "./index.css";
 import Player from "./Player";
 
@@ -31,6 +32,11 @@ export default function App() {
             🚀
           </button>
           <p class="title">Software Developer</p>
+          <SocialLinks
+            linkedinUrl="https://www.linkedin.com/in/pedersenrobin"
+            githubUrl="https://github.com/PeRobin"
+            email="pedersen.robin@pm.me"
+          />
         </section>
 
       ) : (
