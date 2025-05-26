@@ -1,9 +1,8 @@
 import { createSignal, onCleanup, onMount } from "solid-js";
-import Bullet from "./components/Bullet";
+import Game from "./game/Game";
 import SocialLinks from "./components/SocialLinks";
 import "./index.css";
 import { SOCIAL_LINKS } from "./social-links";
-import Player from "./Player";
 
 export default function App() {
   const [showGame, setShowGame] = createSignal(false);
@@ -44,47 +43,5 @@ export default function App() {
         <Game />
       )}
     </main>
-  );
-}
-
-function Game() {
-  const START_POS = 50;
-  const STEP = 5;
-  const MIN = 0;
-  const MAX = 100;
-
-  const [playerX, setPlayerX] = createSignal(START_POS);
-  const [bulletX, setBulletX] = createSignal(0);
-  const [bulletVisible, setBulletVisible] = createSignal(false);
-
-  const moveLeft = () => setPlayerX(x => Math.max(MIN, x - STEP));
-  const moveRight = () => setPlayerX(x => Math.min(MAX, x + STEP));
-
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === "ArrowLeft") moveLeft();
-    if (e.key === "ArrowRight") moveRight();
-
-    if (e.key === " ") {
-      e.preventDefault();
-      if (!bulletVisible()) {
-        setBulletX(playerX());
-        setBulletVisible(true);
-      }
-    }
-  };
-
-  window.addEventListener("keydown", handleKeyDown);
-  onCleanup(() => window.removeEventListener("keydown", handleKeyDown));
-
-  return (
-    <div class="game">
-      <Player x={playerX()} />
-      {bulletVisible() && (
-        <Bullet
-          x={bulletX()}
-          onRemove={() => setBulletVisible(false)}
-        />
-      )}
-    </div>
   );
 }
