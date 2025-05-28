@@ -18,12 +18,12 @@ main {
   place-items: center;
   text-align: center;
   padding: 1rem;
-} 
+}
 
 html,
 body {
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; 
+  -moz-osx-font-smoothing: grayscale;
   height: 100%;
   font-family: var(--font-family);
   color: var(--font-color);
@@ -86,6 +86,13 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
 }

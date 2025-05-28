@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "",
   "pnpm": {
-    "onlyBuiltDependencies": ["esbuild"]
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   },
   "type": "module",
   "scripts": {
@@ -14,12 +16,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^5.7.2",
-    "vite": "^6.0.0",
-    "vite-plugin-solid": "^2.11.6"
+    "typescript": "5.7.2",
+    "vite": "6.0.0",
+    "vite-plugin-solid": "2.11.6"
   },
   "dependencies": {
-    "solid-icons": "^1.1.0",
-    "solid-js": "^1.9.5"
+    "solid-icons": "1.1.0",
+    "solid-js": "1.9.5"
   }
 }
