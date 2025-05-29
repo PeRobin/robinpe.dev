@@ -1,5 +1,5 @@
-import { Component } from "solid-js";
-import { AiFillLinkedin, AiFillGithub, AiFillMail  } from 'solid-icons/ai'
+import { Component } from 'solid-js';
+import { AiFillLinkedin, AiFillGithub, AiFillMail } from 'solid-icons/ai';
 
 type SocialLinksProps = {
   linkedinUrl: string;
@@ -12,24 +12,14 @@ const SocialLinks: Component<SocialLinksProps> = (props) => {
 
   return (
     <div class="social-links">
-      <a
-        href={props.linkedinUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-      >
+      <a href={props.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
         <AiFillLinkedin size={iconSize} />
       </a>
-      <a
-        href={props.githubUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="GitHub"
-      >
+      <a href={props.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
         <AiFillGithub size={iconSize} />
       </a>
       <a href={`mailto:${props.email}`} aria-label="Email">
-        <AiFillMail  size={iconSize} />
+        <AiFillMail size={iconSize} />
       </a>
     </div>
   );

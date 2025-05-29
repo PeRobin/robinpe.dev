@@ -1,22 +1,22 @@
-import { createSignal, onCleanup, onMount } from "solid-js";
-import Game from "./game/Game";
-import SocialLinks from "./components/SocialLinks";
-import "./index.css";
-import { SOCIAL_LINKS } from "./social-links";
+import { createSignal, onCleanup, onMount } from 'solid-js';
+import Game from './game/Game';
+import SocialLinks from './components/SocialLinks';
+import './index.css';
+import { SOCIAL_LINKS } from './social-links';
 
 export default function App() {
   const [showGame, setShowGame] = createSignal(false);
 
   onMount(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (!showGame() && e.key === " ") {
+      if (!showGame() && e.key === ' ') {
         e.preventDefault();
         setShowGame(true);
       }
     };
 
-    window.addEventListener("keydown", handleKey);
-    onCleanup(() => window.removeEventListener("keydown", handleKey));
+    window.addEventListener('keydown', handleKey);
+    onCleanup(() => window.removeEventListener('keydown', handleKey));
   });
 
   return (
@@ -38,7 +38,6 @@ export default function App() {
             email={SOCIAL_LINKS.email}
           />
         </section>
-
       ) : (
         <Game />
       )}
