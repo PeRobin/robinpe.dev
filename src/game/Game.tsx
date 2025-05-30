@@ -1,15 +1,13 @@
-import { createSignal, onMount, onCleanup } from 'solid-js';
+// src/game/Game.tsx
+import { onMount, onCleanup, createSignal } from 'solid-js';
 import Player from '../components/Player';
 import Bullet from '../components/Bullet';
-import { PLAYER_START_POS, PLAYER_STEP, PLAYER_MIN, PLAYER_MAX } from './constants';
+import { usePlayer } from './hooks/usePlayer';
 
 export default function Game() {
-  const [playerX, setPlayerX] = createSignal(PLAYER_START_POS);
+  const { x: playerX, moveLeft, moveRight } = usePlayer();
   const [bulletX, setBulletX] = createSignal(0);
   const [bulletVisible, setBulletVisible] = createSignal(false);
-
-  const moveLeft = () => setPlayerX((x) => Math.max(PLAYER_MIN, x - PLAYER_STEP));
-  const moveRight = () => setPlayerX((x) => Math.min(PLAYER_MAX, x + PLAYER_STEP));
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === 'ArrowLeft') moveLeft();
@@ -32,6 +30,7 @@ export default function Game() {
   return (
     <div class="game">
       <Player x={playerX()} />
+
       {bulletVisible() && <Bullet x={bulletX()} onRemove={() => setBulletVisible(false)} />}
     </div>
   );
