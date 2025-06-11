@@ -6,12 +6,21 @@ import { SOCIAL_LINKS } from './social-links';
 
 export default function App() {
   const [showGame, setShowGame] = createSignal(false);
+  const [isExiting, setIsExiting] = createSignal(false);
+
+  const handleStartGame = () => {
+    if (isExiting() || showGame()) return;
+    setIsExiting(true);
+    setTimeout(() => {
+      setShowGame(true);
+    }, 500);
+  };
 
   onMount(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (!showGame() && e.key === ' ') {
+      if (e.key === ' ') {
         e.preventDefault();
-        setShowGame(true);
+        handleStartGame();
       }
     };
 
@@ -22,21 +31,23 @@ export default function App() {
   return (
     <main>
       {!showGame() ? (
-        <section>
-          <h1>Robin Pedersen</h1>
+        <section classList={{ exiting: isExiting() }}>
+          <h1 class="name">Robin Pedersen</h1>
+          <p class="title">Software Developer</p>
           <button
             aria-label="Activate space invaders"
             class="emoji"
-            onClick={() => setShowGame(true)}
+            onClick={handleStartGame}
           >
             🚀
           </button>
-          <p class="title">Software Developer</p>
-          <SocialLinks
-            linkedinUrl={SOCIAL_LINKS.linkedin}
-            githubUrl={SOCIAL_LINKS.github}
-            email={SOCIAL_LINKS.email}
-          />
+          <div class="social-links-wrapper">
+            <SocialLinks
+              linkedinUrl={SOCIAL_LINKS.linkedin}
+              githubUrl={SOCIAL_LINKS.github}
+              email={SOCIAL_LINKS.email}
+            />
+          </div>
         </section>
       ) : (
         <Game />

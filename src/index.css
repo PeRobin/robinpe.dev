@@ -85,6 +85,35 @@ body {
   opacity: 0.8;
 }
 
+.name,
+.title,
+.emoji,
+.social-links-wrapper {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.exiting .name,
+.exiting .title {
+  transform: translateX(-100vw);
+  opacity: 0;
+}
+
+.exiting .emoji {
+  transform: translateY(45vh) scale(0.5);
+  opacity: 0;
+}
+
+.exiting .social-links-wrapper {
+  transform: translateX(100vw);
+  opacity: 0;
+}
+
+.social-links-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 @keyframes pulse {
 
   0%,
