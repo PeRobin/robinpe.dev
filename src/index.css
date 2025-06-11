@@ -1,8 +1,6 @@
 :root {
   --font-family: 'OblivionFont', sans-serif;
   --font-color: #e8e6e3;
-  --bacground-color-start: #c61aff;
-  --bacground-color-stop: #4e0066;
   --background-gradient: radial-gradient(circle at center, #c61aff, #4e0066);
 }
 
@@ -10,14 +8,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-main {
-  height: 100vh;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 1rem;
 }
 
 html,
@@ -31,6 +21,15 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow-x: hidden; 
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
 }
 
 .title {
@@ -39,12 +38,34 @@ body {
 }
 
 .emoji {
-  animation: pulse 2s infinite;
   font-size: 2rem;
   background: none;
   border: none;
   cursor: pointer;
   margin: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.social-links-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: var(--font-color);
+  transition: transform 0.1s ease-in-out, opacity 0.1s;
+}
+
+.social-links a:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 
 .game {
@@ -68,26 +89,8 @@ body {
   transform: translateX(-50%);
 }
 
-.social-links {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.social-links a {
-  color: var(--font-color);
-  transition: transform 0.1s ease-in-out, opacity 0.1s;
-}
-
-.social-links a:hover {
-  transform: scale(1.1);
-  opacity: 0.8;
-}
-
 .name,
 .title,
-.emoji,
 .social-links-wrapper {
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
@@ -98,30 +101,35 @@ body {
   opacity: 0;
 }
 
-.exiting .emoji {
-  transform: translateY(45vh) scale(0.5);
-  opacity: 0;
-}
-
 .exiting .social-links-wrapper {
   transform: translateX(100vw);
   opacity: 0;
 }
 
-.social-links-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.exiting .emoji {
+  animation: fly-to-bottom 0.5s ease-in forwards;
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     transform: scale(1);
   }
-
   50% {
     transform: scale(1.2);
+  }
+}
+
+@keyframes fly-to-bottom {
+  0% {
+    transform: translateY(0) scale(1.2);
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(45vh);
+    opacity: 0;
   }
 }
