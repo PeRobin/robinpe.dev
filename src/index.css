@@ -25,11 +25,18 @@ body {
 }
 
 main {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   display: grid;
   place-items: center;
   text-align: center;
   padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 0.25rem;
+  }
 }
 
 .title {

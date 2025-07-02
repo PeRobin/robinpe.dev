@@ -29,7 +29,9 @@ export default function Bullet(props: BulletProps) {
         left: `${props.x}%`,
         bottom: `${y()}%`,
       }}
-      aria-label="Bullet"
+      aria-label="Bullet (player)"
+      role="img"
+      tabIndex={0}
     >
       💥
     </div>
