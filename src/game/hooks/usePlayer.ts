@@ -1,10 +1,5 @@
-import { createSignal } from "solid-js";
-import {
-  PLAYER_START_POS,
-  PLAYER_STEP,
-  PLAYER_MIN,
-  PLAYER_MAX,
-} from "../constants";
+import { createSignal } from 'solid-js';
+import { PLAYER_START_POS, PLAYER_STEP, PLAYER_MIN, PLAYER_MAX } from '../constants';
 
 export function usePlayer() {
   const [x, setX] = createSignal(PLAYER_START_POS);

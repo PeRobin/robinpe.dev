@@ -1,8 +1,10 @@
-import { A } from "@solidjs/router";
-import { createSignal, onCleanup, onMount } from "solid-js";
-import SocialLinks from "../components/SocialLinks";
-import Game from "../game/Game";
-import { SOCIAL_LINKS } from "../social-links";
+import { A } from '@solidjs/router';
+import { createSignal, onCleanup, onMount } from 'solid-js';
+import SocialLinks from '../components/SocialLinks';
+import Game from '../game/Game';
+import { SOCIAL_LINKS } from '../social-links';
+
+const HOME_EXIT_TRANSITION_MS = 500;
 
 export default function HomePage() {
   const [showGame, setShowGame] = createSignal(false);
@@ -13,19 +15,19 @@ export default function HomePage() {
     setIsExiting(true);
     setTimeout(() => {
       setShowGame(true);
-    }, 500);
+    }, HOME_EXIT_TRANSITION_MS);
   };
 
   onMount(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === " ") {
+      if (e.key === ' ') {
         e.preventDefault();
         handleStartGame();
       }
     };
 
-    window.addEventListener("keydown", handleKey);
-    onCleanup(() => window.removeEventListener("keydown", handleKey));
+    window.addEventListener('keydown', handleKey);
+    onCleanup(() => window.removeEventListener('keydown', handleKey));
   });
 
   return (
@@ -39,11 +41,7 @@ export default function HomePage() {
           </header>
           <h1 class="name">Robin Pedersen</h1>
           <p class="title">Software Developer</p>
-          <button
-            aria-label="Activate space invaders"
-            class="emoji"
-            onClick={handleStartGame}
-          >
+          <button aria-label="Activate space invaders" class="emoji" onClick={handleStartGame}>
             🚀
           </button>
           <div class="social-links-wrapper">

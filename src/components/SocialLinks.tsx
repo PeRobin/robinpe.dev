@@ -1,5 +1,5 @@
-import { Component } from "solid-js";
-import { AiFillLinkedin, AiFillGithub, AiFillMail } from "solid-icons/ai";
+import { Component } from 'solid-js';
+import { AiFillLinkedin, AiFillGithub, AiFillMail } from 'solid-icons/ai';
 
 type SocialLinksProps = {
   linkedinUrl: string;
@@ -28,10 +28,7 @@ const SocialLinks: Component<SocialLinksProps> = (props) => {
       >
         <AiFillGithub size={iconSize} />
       </a>
-      <a
-        href={`mailto:${props.email}`}
-        aria-label="Ta kontakt med Robin Pedersen via e-post"
-      >
+      <a href={`mailto:${props.email}`} aria-label="Ta kontakt med Robin Pedersen via e-post">
         <AiFillMail size={iconSize} />
       </a>
     </div>
