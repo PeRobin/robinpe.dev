@@ -1,7 +1,7 @@
-import { A } from '@solidjs/router';
-import { For } from 'solid-js';
-import ResumeCard from '../components/ResumeCard';
-import { RESUME_ENTRIES } from '../resume-data';
+import { A } from "@solidjs/router";
+import { For } from "solid-js";
+import ResumeCard from "../components/ResumeCard";
+import { RESUME_ENTRIES } from "../resume-data";
 
 export default function ResumePage() {
   return (

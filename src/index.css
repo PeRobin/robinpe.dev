@@ -1,5 +1,5 @@
 :root {
-  --font-family: 'OblivionFont', sans-serif;
+  --font-family: "OblivionFont", sans-serif;
   --font-color: #e8e6e3;
   --background-gradient: radial-gradient(circle at center, #c61aff, #4e0066);
 }
@@ -21,7 +21,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 main {
@@ -56,7 +56,9 @@ main {
   font-size: 1rem;
   letter-spacing: 0.04em;
   opacity: 0.9;
-  transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+  transition:
+    opacity 0.15s ease-in-out,
+    transform 0.15s ease-in-out;
 }
 
 .resume-link:hover,
@@ -114,6 +116,46 @@ main {
   border-radius: 0.8rem;
   padding: 1rem 1rem 0.9rem;
   backdrop-filter: blur(2px);
+}
+
+.tilt-card {
+  --tilt-x: 0;
+  --tilt-y: 0;
+  --glare-x: 50%;
+  --glare-y: 20%;
+
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition:
+    transform 180ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+  transform: perspective(900px) rotateX(calc(var(--tilt-y) * -8deg))
+    rotateY(calc(var(--tilt-x) * 10deg)) translateY(-1px);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.22),
+    0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.tilt-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    220px circle at var(--glare-x) var(--glare-y),
+    rgba(255, 255, 255, 0.22),
+    rgba(255, 255, 255, 0) 60%
+  );
+  mix-blend-mode: screen;
+  opacity: 0.8;
+  transform: translateZ(24px);
+}
+
+.tilt-card:hover {
+  border-color: rgba(232, 230, 227, 0.38);
 }
 
 .resume-card-header {
@@ -177,6 +219,28 @@ main {
   }
 }
 
+@media (hover: none), (pointer: coarse) {
+  .tilt-card {
+    transform: none;
+    transition: border-color 180ms ease;
+  }
+
+  .tilt-card::before {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilt-card {
+    transition: none;
+    transform: none;
+  }
+
+  .tilt-card::before {
+    display: none;
+  }
+}
+
 .title {
   font-size: 1.5rem;
   opacity: 0.8;
@@ -205,7 +269,9 @@ main {
 
 .social-links a {
   color: var(--font-color);
-  transition: transform 0.1s ease-in-out, opacity 0.1s;
+  transition:
+    transform 0.1s ease-in-out,
+    opacity 0.1s;
 }
 
 .social-links a:hover {
@@ -237,7 +303,9 @@ main {
 .name,
 .title,
 .social-links-wrapper {
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition:
+    transform 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
 }
 
 .exiting .name,
