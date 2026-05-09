@@ -5,3 +5,4 @@ export const PLAYER_MAX = 100;
 
 export const BULLET_START_Y = 10;
 export const BULLET_STEP = 2;
+export const GAME_TICK_MS = 16;

@@ -1,7 +1,7 @@
-import { A } from "@solidjs/router";
-import { For } from "solid-js";
-import ResumeCard from "../components/ResumeCard";
-import { RESUME_ENTRIES } from "../resume-data";
+import { A } from '@solidjs/router';
+import { For } from 'solid-js';
+import ResumeCard from '../components/ResumeCard';
+import { RESUME_ENTRIES } from '../resume-data';
 
 export default function ResumePage() {
   return (
@@ -17,6 +17,7 @@ export default function ResumePage() {
         </header>
 
         <section class="resume-section" aria-labelledby="experience-title">
+          <h2 id="experience-title">Work history</h2>
           <div class="resume-cards">
             <For each={RESUME_ENTRIES}>
               {(entry) => (

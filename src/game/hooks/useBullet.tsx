@@ -1,5 +1,5 @@
-import { createSignal, onCleanup } from "solid-js";
-import { BULLET_START_Y, BULLET_STEP } from "../constants";
+import { createSignal, onCleanup } from 'solid-js';
+import { BULLET_START_Y, BULLET_STEP, GAME_TICK_MS } from '../constants';
 
 export function useBullet() {
   const [x, setX] = createSignal(0);
@@ -26,7 +26,7 @@ export function useBullet() {
         }
         return nextY;
       });
-    }, 16);
+    }, GAME_TICK_MS);
   };
 
   onCleanup(() => {
