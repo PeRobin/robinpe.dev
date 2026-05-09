@@ -1,8 +1,8 @@
-import { A } from '@solidjs/router';
-import { createSignal, onCleanup, onMount } from 'solid-js';
-import SocialLinks from '../components/SocialLinks';
-import Game from '../game/Game';
-import { SOCIAL_LINKS } from '../social-links';
+import { A } from "@solidjs/router";
+import { createSignal, onCleanup, onMount } from "solid-js";
+import SocialLinks from "../components/SocialLinks";
+import Game from "../game/Game";
+import { SOCIAL_LINKS } from "../social-links";
 
 export default function HomePage() {
   const [showGame, setShowGame] = createSignal(false);
@@ -18,14 +18,14 @@ export default function HomePage() {
 
   onMount(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === ' ') {
+      if (e.key === " ") {
         e.preventDefault();
         handleStartGame();
       }
     };
 
-    window.addEventListener('keydown', handleKey);
-    onCleanup(() => window.removeEventListener('keydown', handleKey));
+    window.addEventListener("keydown", handleKey);
+    onCleanup(() => window.removeEventListener("keydown", handleKey));
   });
 
   return (

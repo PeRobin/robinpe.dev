@@ -1,4 +1,4 @@
-import { createSignal, onCleanup } from 'solid-js';
+import { createSignal, onCleanup } from "solid-js";
 
 interface BulletProps {
   x: number;
