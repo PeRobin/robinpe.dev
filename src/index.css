@@ -33,9 +33,147 @@ main {
   padding: 1rem;
 }
 
+.home {
+  position: relative;
+  min-height: 82vh;
+  width: min(48rem, 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.resume-link {
+  color: var(--font-color);
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+  transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.resume-link:hover,
+.resume-link:focus-visible {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.resume-main {
+  display: block;
+  text-align: left;
+  padding: 3.5rem 1rem 2rem;
+}
+
+.resume-page {
+  width: min(48rem, 100%);
+  margin: 0 auto;
+}
+
+.resume-page-header {
+  margin-bottom: 1.5rem;
+}
+
+.resume-page-header nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.resume-page-header h1 {
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  margin-bottom: 0.5rem;
+}
+
+.resume-intro {
+  max-width: 60ch;
+  opacity: 0.9;
+  line-height: 1.45;
+}
+
+.resume-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  opacity: 0.95;
+}
+
+.resume-cards {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.resume-card {
+  background: rgba(18, 4, 24, 0.3);
+  border: 1px solid rgba(232, 230, 227, 0.22);
+  border-radius: 0.8rem;
+  padding: 1rem 1rem 0.9rem;
+  backdrop-filter: blur(2px);
+}
+
+.resume-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.35rem;
+}
+
+.resume-workplace {
+  font-size: 1.1rem;
+}
+
+.resume-period,
+.resume-meta,
+.resume-description {
+  opacity: 0.92;
+}
+
+.resume-period,
+.resume-meta {
+  font-size: 0.93rem;
+}
+
+.resume-meta {
+  margin-bottom: 0.45rem;
+}
+
+.resume-title {
+  font-weight: 600;
+}
+
+.resume-description {
+  line-height: 1.45;
+  margin-bottom: 0.55rem;
+}
+
+.resume-highlights {
+  list-style-position: inside;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.resume-highlights li {
+  line-height: 1.4;
+}
+
 @media (max-width: 600px) {
   main {
     padding: 0.25rem;
+  }
+
+  .resume-main {
+    padding: 3rem 0.75rem 1.5rem;
+  }
+
+  .resume-card {
+    padding: 0.85rem;
   }
 }
 
