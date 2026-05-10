@@ -1,11 +1,23 @@
 import { A } from '@solidjs/router';
 import { For } from 'solid-js';
+import { Title, Meta } from '@solidjs/meta';
 import ResumeCard from '../components/ResumeCard';
 import { RESUME_ENTRIES } from '../resume-data';
 
 export default function ResumePage() {
   return (
     <main class="resume-main">
+      <Title>Robin Pedersen - Erfaring som systemutvikler | Oslo</Title>
+      <Meta
+        name="description"
+        content="Se Robin Pedersens erfaring som systemutvikler i Oslo. Bakgrunn fra Patentstyret, Cloudberries og Politiets IT-Enhet med .NET, C#, TypeScript, React og Azure."
+      />
+      <Meta property="og:title" content="Robin Pedersen – Erfaring | Systemutvikler Oslo" />
+      <Meta
+        property="og:description"
+        content="Fullstack systemutvikler med erfaring fra Patentstyret, Cloudberries og Politiets IT-Enhet."
+      />
+      <Meta property="og:url" content="https://robinpe.dev/resume" />
       <section class="resume-page" aria-labelledby="resume-page-title">
         <header class="resume-page-header">
           <nav aria-label="Resume navigation">

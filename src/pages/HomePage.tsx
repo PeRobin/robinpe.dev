@@ -1,5 +1,6 @@
 import { A } from '@solidjs/router';
 import { createSignal, onCleanup, onMount } from 'solid-js';
+import { Title, Meta } from '@solidjs/meta';
 import SocialLinks from '../components/SocialLinks';
 import Game from '../game/Game';
 import { SOCIAL_LINKS } from '../social-links';
@@ -32,6 +33,17 @@ export default function HomePage() {
 
   return (
     <main>
+      <Title>Robin Pedersen - Systemutvikler i Oslo</Title>
+      <Meta
+        name="description"
+        content="Robin Pedersen er en systemutvikler i Oslo med erfaring innen .NET, C#, TypeScript, React og Azure. Jobber hos Patentstyret."
+      />
+      <Meta property="og:title" content="Robin Pedersen – Systemutvikler i Oslo" />
+      <Meta
+        property="og:description"
+        content="Fullstack systemutvikler i Oslo med erfaring fra Patentstyret, Cloudberries og Politiets IT-Enhet."
+      />
+      <Meta property="og:url" content="https://robinpe.dev" />
       {!showGame() ? (
         <section class="home" classList={{ exiting: isExiting() }}>
           <header class="home-header">
@@ -50,6 +62,14 @@ export default function HomePage() {
               githubUrl={SOCIAL_LINKS.github}
               email={SOCIAL_LINKS.email}
             />
+          </div>
+          <div class="sr-only">
+            <p>
+              Robin Pedersen er en systemutvikler basert i Oslo-området. Han jobber hos Patentstyret
+              som Software Developer, med tidligere erfaring som Senior Consultant hos Cloudberries
+              og System developer hos Politiets IT-Enhet. Teknisk kompetanse omfatter .NET, C#,
+              TypeScript, JavaScript, React, Azure og moderne webapplikasjoner.
+            </p>
           </div>
         </section>
       ) : (
