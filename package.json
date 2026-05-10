@@ -19,21 +19,21 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "8.33.0",
-    "@typescript-eslint/parser": "8.33.0",
-    "eslint": "9.27.0",
-    "eslint-config-prettier": "10.1.5",
-    "eslint-plugin-prettier": "5.4.0",
+    "@typescript-eslint/eslint-plugin": "8.59.2",
+    "@typescript-eslint/parser": "8.59.2",
+    "eslint": "10.3.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.5",
     "eslint-plugin-solid": "^0.14.5",
-    "prettier": "3.5.3",
-    "typescript": "5.7.2",
-    "vite": "npm:rolldown-vite@latest",
-    "vite-plugin-solid": "2.11.6"
+    "prettier": "3.8.3",
+    "typescript": "6.0.3",
+    "vite": "8.0.11",
+    "vite-plugin-solid": "2.11.12"
   },
   "dependencies": {
-    "@solidjs/meta": "^0.29.4",
+    "@solidjs/meta": "0.29.4",
     "@solidjs/router": "0.16.1",
-    "solid-icons": "1.1.0",
+    "solid-icons": "1.2.0",
     "solid-js": "1.9.12"
   }
 }
